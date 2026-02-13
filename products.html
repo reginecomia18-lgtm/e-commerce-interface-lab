@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products | My Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+    <h1>Our Products</h1>
+</header>
+
+<main>
+
+    <section>
+        <h2>Product Listing</h2>
+
+        <div class="product-grid">
+
+            <article>
+                <h3>Laptop</h3>
+                <p>Price: ₱45,000</p>
+                <a href="details.html">View Details</a>
+            </article>
+
+            <article>
+                <h3>Smart Watch</h3>
+                <p>Price: ₱8,500</p>
+                <a href="details.html">View Details</a>
+            </article>
+
+            <article>
+                <h3>Bluetooth Speaker</h3>
+                <p>Price: ₱2,500</p>
+                <a href="details.html">View Details</a>
+            </article>
+
+            <article>
+                <h3>Leather Jacket</h3>
+                <p>Price: ₱3,999</p>
+                <a href="details.html">View Details</a>
+            </article>
+
+        </div>
+    </section>
+
+</main>
+
+<aside>
+    <h2>Filter Products</h2>
+
+    <form>
+        <fieldset>
+            <legend>Category</legend>
+            <label>
+                <input type="checkbox" name="category" value="electronics">
+                Electronics
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="category" value="fashion">
+                Fashion
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Sort by Price</legend>
+            <label>
+                <input type="radio" name="price" value="low">
+                Low to High
+            </label><br>
+
+            <label>
+                <input type="radio" name="price" value="high">
+                High to Low
+            </label>
+        </fieldset>
+
+        <button type="submit">Apply Filter</button>
+    </form>
+</aside>
+
+</body>
+</html>
