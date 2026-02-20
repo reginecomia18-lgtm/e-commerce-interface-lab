@@ -1,0 +1,157 @@
+/* TASK 1: Global Styles & Variables */
+:root {
+    --primary-color: brown;
+    --accent-color: #e67e22;
+    --bg-light: #f4f4f4;
+    --bg-card: #ffffff;
+    --text-main: #333333;
+    --success-color: #27ae60;
+    --border-color: #ddd;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Georgia', serif; 
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* TASK 2: Interactive States & Transitions */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+a {
+    text-decoration: none; 
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;  
+    display: block; 
+    border-radius: 4px;
+}
+
+button, input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: var(--accent-color);
+}
+
+button:active, input[type="submit"]:active {
+    transform: scale(0.95); 
+}
+
+input:focus, button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* TASK 3: Product List Styling (Card Layout) */
+.product-grid article, section article {
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+    margin: 10px;
+    padding: 15px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,    0,0.1);
+}
+
+.product-grid article:nth-child(odd) {
+    background-color: #fff;
+}
+
+.product-grid article:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* TASK 4: Advanced Selectors & Pseudo-elements */
+section:empty {
+    display: block;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    background: #fff;
+}
+
+.price::before {
+    content: "₱";
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+
+input:required {
+    border: 1px solid #e74c3c; 
+}
+
+input:valid {
+    border: 1px solid var(--success-color); 
+}
+
+/* TASK 5: Detailed Data Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table tr td:first-child {
+    font-weight: bold;
+    color: var(--primary-color);
+    background-color: #eee;
+    width: 30%;
+}
+
+
+details summary::marker {
+    color: var(--accent-color);
+    font-size: 1.2em;
+}
+
+blockquote::before {
+    content: "“";
+    font-size: 2em;
+    color: var(--accent-color);
+    vertical-align: sub;
+}
+
+blockquote::after {
+    content: "”";
+    font-size: 2em;
+    color: var(--accent-color);
+    vertical-align: sub;
+}
+
