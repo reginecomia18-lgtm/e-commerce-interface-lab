@@ -1,4 +1,11 @@
-/* TASK 1: Global Styles & Variables */
+/* ========================================================
+  My Store - Responsive & Modern Layout CSS
+  Mobile-First Approach (0–480px base)
+======================================================== */
+
+/* ----------------------------
+  Global Variables
+---------------------------- */
 :root {
     --primary-color: brown;
     --accent-color: #e67e22;
@@ -9,8 +16,11 @@
     --border-color: #ddd;
 }
 
+/* ----------------------------
+  Base Styles
+---------------------------- */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-light);
     color: var(--text-main);
     line-height: 1.6;
@@ -19,24 +29,13 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Georgia', serif; 
+    font-family: 'Georgia', serif;
     color: var(--primary-color);
     font-weight: 700;
 }
 
-/* TASK 2: Interactive States & Transitions */
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
 a {
-    text-decoration: none; 
+    text-decoration: none;
     color: var(--primary-color);
     transition: all 0.3s ease;
 }
@@ -48,8 +47,8 @@ a:hover {
 
 img {
     max-width: 100%;
-    height: auto;  
-    display: block; 
+    height: auto;
+    display: block;
     border-radius: 4px;
 }
 
@@ -68,7 +67,7 @@ button:hover, input[type="submit"]:hover {
 }
 
 button:active, input[type="submit"]:active {
-    transform: scale(0.95); 
+    transform: scale(0.95);
 }
 
 input:focus, button:focus {
@@ -76,52 +75,134 @@ input:focus, button:focus {
     outline-offset: 2px;
 }
 
-/* TASK 3: Product List Styling (Card Layout) */
+/* ----------------------------
+  Hero Section (Landing Page)
+---------------------------- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 300px;
+    gap: 20px;
+}
+
+/* ----------------------------
+  Navigation
+---------------------------- */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav ul li {
+    display: block;
+}
+
+/* ----------------------------
+  Product Grid
+---------------------------- */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: single column */
+    gap: 20px;
+}
+
 .product-grid article, section article {
-    display: inline-block;
-    width: 250px;
-    vertical-align: top;
-    margin: 10px;
     padding: 15px;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,    0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease forwards;
 }
 
-.product-grid article:nth-child(odd) {
-    background-color: #fff;
-}
-
-.product-grid article:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* TASK 4: Advanced Selectors & Pseudo-elements */
-section:empty {
-    display: block;
-    padding: 20px;
-    border: 2px dashed #ccc;
-    text-align: center;
-    background: #fff;
-}
-
+/* ----------------------------
+  Prices
+---------------------------- */
 .price::before {
     content: "₱";
     font-weight: bold;
     margin-right: 2px;
 }
 
-
-input:required {
-    border: 1px solid #e74c3c; 
+/* ----------------------------
+  Cart Page
+---------------------------- */
+.cart ul li {
+    display: flex;
+    flex-direction: column; /* Mobile stacked */
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--bg-card);
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 15px;
 }
 
-input:valid {
-    border: 1px solid var(--success-color); 
+.cart ul li img.cart-image {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 4px;
 }
 
-/* TASK 5: Detailed Data Styling */
+.cart-info {
+    text-align: center;
+}
+
+/* ----------------------------
+  Details Page
+---------------------------- */
+.details-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* ----------------------------
+  Account Page
+---------------------------- */
+.orders details {
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--bg-card);
+    padding: 10px;
+}
+
+.order-card p {
+    margin: 5px 0;
+}
+
+/* ----------------------------
+  Checkout Page
+---------------------------- */
+.checkout-main {
+    display: flex;
+    flex-direction: column; /* Mobile stacked */
+    gap: 20px;
+}
+
+/* ----------------------------
+  Global Table Styling
+---------------------------- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -135,23 +216,98 @@ table tr td:first-child {
     width: 30%;
 }
 
-
-details summary::marker {
-    color: var(--accent-color);
-    font-size: 1.2em;
+/* ----------------------------
+  Animations
+---------------------------- */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
 }
 
-blockquote::before {
-    content: "“";
-    font-size: 2em;
-    color: var(--accent-color);
-    vertical-align: sub;
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
-blockquote::after {
-    content: "”";
-    font-size: 2em;
-    color: var(--accent-color);
-    vertical-align: sub;
+input[type="submit"]:hover {
+    animation: pulse 0.5s ease-in-out;
 }
 
+/* ========================================================
+  Media Queries - Tablet (481px - 768px)
+======================================================== */
+@media (min-width: 481px) {
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet: 2-column grid */
+    }
+
+    .cart ul li {
+        flex-direction: row; /* Horizontal alignment */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .checkout-main {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+/* ========================================================
+  Media Queries - Desktop (769px - 1280px)
+======================================================== */
+@media (min-width: 769px) {
+
+    .product-grid {
+        grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Desktop 4-column */
+    }
+
+    /* Products page: sidebar/main layout */
+    .products-container {
+        display: grid;
+        grid-template-columns: 1fr 4fr; /* Sidebar ~20%, Main ~80% */
+        gap: 20px;
+    }
+
+    aside {
+        order: 0; /* Sidebar left */
+    }
+
+    main {
+        order: 1;
+    }
+
+    /* Hero section horizontal layout */
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        padding: 40px;
+    }
+
+    .details-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .details-wrapper img {
+        max-width: 50%;
+    }
+
+    .table-wrapper {
+        max-width: 50%;
+    }
+}
