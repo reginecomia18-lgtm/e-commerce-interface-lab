@@ -310,4 +310,13 @@ input[type="submit"]:hover {
     .table-wrapper {
         max-width: 50%;
     }
+    
+    .error {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+    }
+
+    .fade-in {
+    animation: fadeIn 0.5s ease;
+    }
 }
